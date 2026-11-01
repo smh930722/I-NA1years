@@ -75,6 +75,14 @@ window.INVITE = {
     middle: 'ribbon_balloons.jpg',
     closing: 'KakaoTalk_20260928_125130467.jpg',
     gallery: [
+      'gallery_1.jpg',
+      'gallery_2.jpg',
+      'gallery_3.jpg',
+      'gallery_4.jpg',
+      'gallery_5.jpg',
+      'gallery_6.jpg',
+      'gallery_7.jpg',
+      'gallery_8.jpg',
       'KakaoTalk_20261002_144355051_05.jpg',
       'KakaoTalk_20260930_071419953_02.jpg',
       'KakaoTalk_20260928_125130467.jpg',
@@ -84,7 +92,7 @@ window.INVITE = {
       'KakaoTalk_20260923_081759364_01.jpg',
       'KakaoTalk_20260923_170852394_05.jpg',
     ],
-    timeline: { 0: 'KakaoTalk_20260923_170852394_05.jpg', 3: '', 6: '', 9: '', 12: '' },
+    timeline: { 0: 'KakaoTalk_20260923_170852394_05.jpg', 3: 'tl_3m.jpg', 6: 'tl_6m.jpg', 9: 'tl_9m.jpg', 12: 'tl_12m.jpg' },
   },
 
   // 배경음악: invite/music/ 폴더의 파일 이름. 비우면 음악 버튼이 사라진다.
