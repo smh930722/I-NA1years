@@ -246,6 +246,15 @@ button { font: inherit; color: inherit; }
 /* 마무리 */
 .closing { padding-top: 0; padding-left: 0; padding-right: 0; }
 .closing-photo { aspect-ratio: 1; margin-bottom: 40px; }
+.closing-photo.collage { aspect-ratio: 1 / 1.05; background: var(--soft); overflow: hidden; }
+.cl-card { position: absolute; width: 49%; padding: 8px 8px 28px; background: #fff; border-radius: 4px; box-shadow: 0 10px 24px rgba(60,40,70,.18); }
+.cl-img { aspect-ratio: 3 / 4; background: center/cover no-repeat; border-radius: 2px; }
+.cl-1 { left: 3%; top: 8%; transform: rotate(-6deg); }
+.cl-2 { right: 3%; bottom: 8%; transform: rotate(5deg); }
+.cl-3 { left: 30%; top: 22%; transform: rotate(2deg); }
+.reveal.in .cl-card { animation: clIn .9s cubic-bezier(.3,1.4,.5,1) both; }
+.reveal.in .cl-2 { animation-delay: .25s; }
+@keyframes clIn { from { opacity: 0; translate: 0 30px; } to { opacity: 1; translate: 0 0; } }
 .closing-text { margin: 0 28px 32px; white-space: pre-line; font-family: var(--title); font-size: 22px; line-height: 1.6; }
 .share { display: grid; gap: 10px; padding: 0 28px; }
 .foot { margin: 40px 0 0; color: var(--muted); font-family: var(--eyebrow); font-size: 14px; }

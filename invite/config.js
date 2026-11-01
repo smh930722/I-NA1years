@@ -73,7 +73,7 @@ window.INVITE = {
     // 커버에서 차례로 바뀌며 보일 사진들 (비우면 cover 한 장만)
     coverSlides: ['hanbok_1.jpg', 'hanbok_2.jpg', 'hanbok_3.jpg', 'hanbok_4.jpg', 'hanbok_5.jpg', 'hanbok_6.jpg', 'hanbok_7.jpg'],
     middle: 'ribbon_balloons.jpg',
-    closing: 'KakaoTalk_20260928_125130467.jpg',
+    closing: ['closing_1.jpg', 'closing_2.jpg'], // 두 장 이상이면 콜라주로 보인다
     gallery: [
       'gallery_1.jpg',
       'gallery_2.jpg',
