@@ -30,6 +30,8 @@ def main() -> None:
         orig = ORIGINAL / f.name
         if (orig.exists() and dst.exists()) or f.name == 'og.jpg':
             continue  # 이미 처리된 웹용 파일
+        if f.suffix.lower() == '.jpg' and f.stat().st_size < 450 * 1024 and max(Image.open(f).size) <= MAX_SIDE:
+            continue  # 이미 웹용 크기인 사진(프로필·약도 등)은 건드리지 않음
         f.replace(orig)
         web_version(orig, dst)
         print(f'{f.name} -> {dst.name} ({dst.stat().st_size // 1024}KB)')

@@ -19,7 +19,7 @@ window.INVITE = {
     kakaoPlaceId: '26893532',
     naverQuery: '파티하우스더엘',
     oldName: '구 파티엘하우스 가산점',
-    mapImage: 'venue_map.png', // 장소에서 받은 약도 (photos/ 폴더)
+    mapImage: 'venue_map.jpg', // 장소에서 받은 약도 (photos/ 폴더)
     transport: [
       { title: '지하철', lines: [
         '1호선 가산디지털단지역 3번 출구',
@@ -69,9 +69,9 @@ window.INVITE = {
 
   // 사진은 invite/photos/ 폴더에 넣고 파일 이름만 적는다. 비어 있으면 자리만 보인다.
   photos: {
-    cover: 'KakaoTalk_20261002_144355051_05.jpg',
+    cover: 'hanbok_1.jpg',
     // 커버에서 차례로 바뀌며 보일 사진들 (비우면 cover 한 장만)
-    coverSlides: ['KakaoTalk_20261002_144355051_05.jpg', 'KakaoTalk_20260930_071419953_02.jpg', 'KakaoTalk_20260928_125130467.jpg'],
+    coverSlides: ['hanbok_1.jpg', 'hanbok_2.jpg', 'hanbok_3.jpg', 'hanbok_4.jpg', 'hanbok_5.jpg', 'hanbok_6.jpg', 'hanbok_7.jpg'],
     middle: 'KakaoTalk_20261002_080459172_04.jpg',
     closing: 'KakaoTalk_20260928_125130467.jpg',
     gallery: [
