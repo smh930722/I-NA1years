@@ -23,7 +23,7 @@
   // 제목은 한 글자씩 나타나도록 글자마다 span으로 나눈다
   const titleLines = [`${babyName} 돌잔치에`, '초대합니다'];
   let k = 0;
-  $('coverTitle').innerHTML = titleLines.map(line => [...line].map(ch => ch === ' ' ? ' ' : `<span class="ch" style="animation-delay:${(0.5 + 0.09 * k++).toFixed(2)}s">${esc(ch)}</span>`).join('')).join('<br>');
+  $('coverTitle').innerHTML = titleLines.map(line => [...line].map(ch => ch === ' ' ? '<i class="gap"></i>' : (() => { const i = k++; return `<span class="ch" style="--t:var(--p${i % 5});--r:${((i * 41) % 15) - 7}deg;animation-delay:${(0.5 + 0.11 * i).toFixed(2)}s">${esc(ch)}</span>`; })()).join('')).join('<br>');
   $('coverTitle').setAttribute('aria-label', titleLines.join(' '));
   $('coverWhen').textContent = `${dateKo} ${timeKo}`;
   $('coverWhere').textContent = `${C.venue.name} ${C.venue.hall}`;

@@ -1,5 +1,6 @@
 /* 모바일 한 줄 세로 흐름. PC에서는 가운데 430px 기둥만 보이고 양옆은 테마색. */
 :root {
+  --p0: #ffd3e1; --p1: #ffeaa6; --p2: #c9efe0; --p3: #cfe0fb; --p4: #e6d6f7;
   --bg: #f4f3f0;
   --card: #ffffff;
   --ink: #1d1b1e;
@@ -135,8 +136,11 @@ button { font: inherit; color: inherit; }
   text-shadow: 0 2px 12px rgba(0,0,0,.25);
 }
 .cover-bottom { position: absolute; left: 0; right: 0; bottom: 7%; text-align: center; }
-.cover-title .ch { display: inline-block; opacity: 0; transform: translateY(14px) scale(.9); }
-.cover.play .cover-title .ch { animation: letter .6s cubic-bezier(.3,1.4,.5,1) forwards; }
+/* 커버 제목: 첫 화면처럼 글자마다 파스텔 방울 위에 */
+.cover-title { text-shadow: none; line-height: 1; }
+.cover-title .ch { display: inline-grid; place-items: center; width: 46px; height: 46px; margin: 3px 1.5px; border-radius: 50%; background: var(--t); color: #4a3a4e; font-size: 27px; box-shadow: inset 0 -3px 0 rgba(0,0,0,.06), 0 3px 10px rgba(60,40,70,.18); opacity: 0; transform: scale(0) rotate(var(--r)); }
+.cover-title .gap { display: inline-block; width: 12px; }
+.cover.play .cover-title .ch { animation: boing .6s cubic-bezier(.3,1.7,.5,1) forwards; }
 .cover-bottom > * { opacity: 0; }
 .cover.play .cover-bottom > * { animation: rise .9s ease forwards; }
 .cover.play .cover-when { animation-delay: 2.2s; }
