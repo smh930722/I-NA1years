@@ -418,31 +418,38 @@
     let W = 0, H = 0, dpr = 1;
     const size = () => { dpr = Math.min(2, window.devicePixelRatio || 1); W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0); };
     size(); addEventListener('resize', size);
-    // 작고 귀여운 파스텔 방울: 반짝이는 하이라이트, 살랑살랑 흔들리며 몽글몽글 커졌다 작아졌다
-    const TINTS = ['255,182,206', '255,226,140', '170,230,210', '170,205,245', '214,190,240', '255,255,255'];
+    // 첫 화면과 같은 방울: 또렷한 파스텔 색 + 하얀 테두리, 사이사이 반짝이 별
+    const TINTS = ['#ffd3e1', '#ffeaa6', '#c9efe0', '#cfe0fb', '#e6d6f7'];
     const make = (fromBottom) => ({
-      x: Math.random() * W, y: fromBottom ? H + 12 : Math.random() * H,
-      r: 2.5 + Math.random() * 4.5, v: 0.3 + Math.random() * 0.55,
-      sway: Math.random() * Math.PI * 2, swayW: 6 + Math.random() * 10,
-      pulse: Math.random() * Math.PI * 2, tint: TINTS[Math.floor(Math.random() * TINTS.length)],
-      a: 0.55 + Math.random() * 0.35,
+      x: Math.random() * W, y: fromBottom ? H + 10 : Math.random() * H,
+      r: 2 + Math.random() * 4, v: 0.35 + Math.random() * 0.5,
+      sway: Math.random() * Math.PI * 2, swayW: 4 + Math.random() * 8,
+      tint: TINTS[Math.floor(Math.random() * TINTS.length)],
     });
-    const bubbles = Array.from({ length: 34 }, () => make(false));
+    const bubbles = Array.from({ length: 30 }, () => make(false));
+    const stars = Array.from({ length: 6 }, (_, i) => ({ x: (0.1 + 0.16 * i + Math.random() * 0.06), y: 0.12 + Math.random() * 0.7, s: 5 + Math.random() * 5, ph: Math.random() * Math.PI * 2 }));
+    const star = (x, y, s) => { g.beginPath(); g.moveTo(x, y - s); g.quadraticCurveTo(x + s * 0.12, y - s * 0.12, x + s, y); g.quadraticCurveTo(x + s * 0.12, y + s * 0.12, x, y + s); g.quadraticCurveTo(x - s * 0.12, y + s * 0.12, x - s, y); g.quadraticCurveTo(x - s * 0.12, y - s * 0.12, x, y - s); g.fill(); };
     let visible = true;
     new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(cover);
     const draw = () => {
       if (visible) {
         g.clearRect(0, 0, W, H);
         for (const b of bubbles) {
-          b.y -= b.v; b.sway += 0.02; b.pulse += 0.06;
-          if (b.y < -14) Object.assign(b, make(true));
+          b.y -= b.v; b.sway += 0.018;
+          if (b.y < -12) Object.assign(b, make(true));
           const x = b.x + Math.sin(b.sway) * b.swayW;
-          const r = b.r * (1 + Math.sin(b.pulse) * 0.12);
-          g.beginPath(); g.arc(x, b.y, r, 0, Math.PI * 2);
-          g.fillStyle = `rgba(${b.tint},${b.a * 0.55})`; g.fill();
-          g.lineWidth = 1; g.strokeStyle = `rgba(255,255,255,${b.a})`; g.stroke();
-          g.beginPath(); g.arc(x - r * 0.35, b.y - r * 0.38, Math.max(0.8, r * 0.3), 0, Math.PI * 2);
-          g.fillStyle = `rgba(255,255,255,${Math.min(1, b.a + 0.2)})`; g.fill();
+          g.beginPath(); g.arc(x, b.y, b.r, 0, Math.PI * 2);
+          g.fillStyle = b.tint; g.fill();
+          g.lineWidth = 1; g.strokeStyle = 'rgba(255,255,255,.95)'; g.stroke();
+          g.beginPath(); g.arc(x + b.r * 0.3, b.y + b.r * 0.3, b.r * 0.35, 0, Math.PI * 2);
+          g.fillStyle = 'rgba(255,255,255,.6)'; g.fill();
+        }
+        const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#c2a3c2';
+        g.fillStyle = accent;
+        for (const st of stars) {
+          st.ph += 0.035;
+          const k = 0.55 + Math.sin(st.ph) * 0.45;
+          g.globalAlpha = 0.5 + k * 0.5; star(st.x * W, st.y * H, st.s * k); g.globalAlpha = 1;
         }
       }
       requestAnimationFrame(draw);
