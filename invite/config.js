@@ -88,10 +88,11 @@ window.INVITE = {
   },
 
   // 배경음악: invite/music/ 폴더의 파일 이름. 비우면 음악 버튼이 사라진다.
-  music: 'glockenspiel-ukulele.mp3',
+  music: 'happy-birthday-instrumental.mp3',
   showMusicPicker: true, // 곡을 다 고르면 false로 바꿔 숨긴다
   // 후보 곡 (모두 Pixabay 무료 음원, 출처 표시 의무 없음)
   musicOptions: [
+    { file: 'happy-birthday-instrumental.mp3', title: 'Happy Birthday Instrumental', by: 'kiravale' },
     { file: 'glockenspiel-ukulele.mp3', title: 'Glockenspiel Ukulele', by: 'zec53' },
     { file: 'cute-joyful-ukulele.mp3', title: 'Cute Joyful Ukulele', by: 'HitsLab' },
     { file: 'sweets.mp3', title: 'Happy Kids Ukulele - Sweets', by: 'Keyframe_Audio' },

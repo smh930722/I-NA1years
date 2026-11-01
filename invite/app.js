@@ -398,7 +398,7 @@
     $('introText').insertAdjacentHTML('beforeend', `<div class="intro-date" style="animation-delay:${(0.3 + n * 0.16).toFixed(2)}s">${dateHtml}<span class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 8.1a4.3 4.3 0 0 1 7.5 2.7C19.5 16.4 12 21 12 21z"/></svg>${esc(babyName)}</span></div>`);
     // 배경: 커버와 같은 작은 파스텔 방울 + 반짝이 별
     introEl.classList.add('cute');
-    const deco = Array.from({ length: 18 }, (_, i) => `<i class="ib" style="left:${(i * 53) % 100}%;--s:${4 + (i * 7) % 9}px;--d:${(5 + (i * 3) % 6)}s;animation-delay:-${(i * 0.7).toFixed(1)}s;--t:var(--p${i % 5})"></i>`).join('')
+    const deco = Array.from({ length: 18 }, (_, i) => `<i class="ib" style="left:${(i * 53) % 100}%;--s:${3 + (i * 7) % 6}px;--d:${(5 + (i * 3) % 6)}s;animation-delay:-${(i * 0.7).toFixed(1)}s;--t:var(--p${i % 5})"></i>`).join('')
       + [[14, 16, 18, .8], [82, 12, 14, 1.4], [10, 78, 12, 2.2], [86, 70, 20, 1.8]].map(([x, yy, sz, dl]) => sparkle(x, yy, sz, dl)).join('');
     introEl.insertAdjacentHTML('afterbegin', `<div class="intro-deco" aria-hidden="true">${deco}</div>`);
     const word = cols.join('') + '    ';
@@ -422,7 +422,7 @@
     const TINTS = ['#ffd3e1', '#ffeaa6', '#c9efe0', '#cfe0fb', '#e6d6f7'];
     const make = (fromBottom) => ({
       x: Math.random() * W, y: fromBottom ? H + 10 : Math.random() * H,
-      r: 2 + Math.random() * 4, v: 0.35 + Math.random() * 0.5,
+      r: 1.4 + Math.random() * 2.4, v: 0.35 + Math.random() * 0.5,
       sway: Math.random() * Math.PI * 2, swayW: 4 + Math.random() * 8,
       tint: TINTS[Math.floor(Math.random() * TINTS.length)],
     });
