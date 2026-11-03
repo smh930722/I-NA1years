@@ -38,7 +38,7 @@
   $('venueName').textContent = `${C.venue.name} ${C.venue.hall}`;
   $('venueAddr').textContent = C.venue.address;
   $('closing').textContent = C.closing;
-  $('yearHint').textContent = `${babyName}가 자라 온 1년`;
+  $('yearHint').textContent = `${babyName}의 1년`;
 
   // ---------- 달력 ----------
   const first = new Date(Date.UTC(y, m - 1, 1)).getUTCDay();
