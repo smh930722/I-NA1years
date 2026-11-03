@@ -96,7 +96,7 @@
   const closingList = [].concat(C.photos.closing || C.photos.cover).filter(Boolean);
   if (closingList.length > 1) {
     const cp = $('closingPhoto');
-    cp.classList.add('collage', 'has-img');
+    cp.classList.add('collage', 'has-img'); cp.style.setProperty('--n', Math.min(3, closingList.length));
     cp.innerHTML = closingList.slice(0, 3).map((f, i) => `<div class="cl-card cl-${i + 1}"><div class="cl-img" style="background-image:url('${src(f)}')"></div></div>`).join('');
   } else setPhoto($('closingPhoto'), closingList[0]);
 
