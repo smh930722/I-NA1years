@@ -1,7 +1,7 @@
 // 초대장 내용은 전부 여기서 고친다. 디자인 코드는 건드릴 필요 없다.
 window.INVITE = {
   // photo: 가족 소개 칸의 동그란 프로필 사진 (photos/ 폴더)
-  baby: { name: '이나', fullName: '신이나', photo: 'profile_ina.jpg' },
+  baby: { name: '이나', fullName: '신이나', photo: 'profile_ina_v2.jpg' },
   parents: {
     dad: { name: '신민호', phone: '010-8992-1067', photo: 'profile_dad.jpg' },
     mom: { name: '박주영', phone: '010-7195-1865', photo: 'profile_mom.jpg' },
@@ -102,6 +102,14 @@ window.INVITE = {
       'gallery_6.jpg',
       'gallery_7.jpg',
       'gallery_8.jpg',
+      'hanbok_g1.jpg',
+      'hanbok_g2.jpg',
+      'hanbok_g3.jpg',
+      'hanbok_g4.jpg',
+      'hanbok_g5.jpg',
+      'hanbok_g6.jpg',
+      'hanbok_g7.jpg',
+      'hanbok_g8.jpg',
     ],
     timeline: { 0: 'tl_0m.jpg', 3: 'tl_3m.jpg', 6: 'tl_6m.jpg', 9: 'tl_9m.jpg', 12: 'tl_12m.jpg' },
   },

@@ -14,7 +14,7 @@
   --eyebrow: 'Gochi Hand', 'Gaegu', cursive;
   --body: 'Gowun Dodum', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
 }
-[data-theme="lilac"]  { --bg: #efe5f5; --secbg: #f7f1fb; --side: #d9c6e6; --soft: #ece0f3; --line: #e6daee; }
+[data-theme="lilac"]  { --bg: #f7f2fa; --secbg: #fcf9fe; --side: #eee5f4; --soft: #f3ecf8; --line: #ece4f2; }
 [data-theme="peach"]  { --accent: #f0ad94; --accent-deep: #c97a5e; --soft: #fbefe9; --side: #f6ddd2; }
 [data-theme="mint"]   { --accent: #9fcfbd; --accent-deep: #5f9c86; --soft: #ebf5f1; --side: #d5ebe2; }
 [data-theme="sky"]    { --accent: #a9c6e8; --accent-deep: #6b8fbd; --soft: #edf3fa; --side: #d8e5f4; }
