@@ -70,6 +70,8 @@ window.INVITE = {
   // 사진은 invite/photos/ 폴더에 넣고 파일 이름만 적는다. 비어 있으면 자리만 보인다.
   photos: {
     cover: 'hanbok_1.jpg',
+    // 카카오톡 링크 미리보기(인장) 사진. tools/optimize_photos.py 가 이걸로 og.jpg 를 만든다
+    ogPhoto: 'og_source.jpg',
     // 커버에서 차례로 바뀌며 보일 사진들 (비우면 cover 한 장만)
     coverSlides: ['hanbok_1.jpg', 'hanbok_2.jpg', 'hanbok_3.jpg', 'hanbok_4.jpg', 'hanbok_5.jpg', 'hanbok_6.jpg', 'hanbok_7.jpg'],
     middle: 'ribbon_balloons.jpg',
@@ -125,5 +127,5 @@ window.INVITE = {
 
   // 카카오 JavaScript 키 (있으면 카카오톡 공유 버튼이 카톡 공유창으로 열린다)
   kakaoJsKey: '',
-  siteUrl: 'https://smh930722.github.io/ina1years/invite/', // 배포 후 실제 주소 (예: https://smh930722.github.io/ina-dol/)
+  siteUrl: 'https://smh930722.github.io/I-NA1years/invite/', // 배포 후 실제 주소 (예: https://smh930722.github.io/ina-dol/)
 };

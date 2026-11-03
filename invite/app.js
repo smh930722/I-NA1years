@@ -232,7 +232,7 @@
     const desc = `${m}월 ${d}일 ${dowKo[dow]}요일 ${timeKo} · ${C.venue.name} ${C.venue.hall}`;
     if (C.kakaoJsKey && window.Kakao) {
       if (!Kakao.isInitialized()) Kakao.init(C.kakaoJsKey);
-      Kakao.Share.sendDefault({ objectType: 'feed', content: { title, description: desc, imageUrl: new URL(src(C.photos.cover || 'og.jpg'), pageUrl()).href, link: { mobileWebUrl: pageUrl(), webUrl: pageUrl() } }, buttons: [{ title: '초대장 보기', link: { mobileWebUrl: pageUrl(), webUrl: pageUrl() } }] });
+      Kakao.Share.sendDefault({ objectType: 'feed', content: { title, description: desc, imageUrl: new URL(src('og.jpg'), pageUrl()).href, link: { mobileWebUrl: pageUrl(), webUrl: pageUrl() } }, buttons: [{ title: '초대장 보기', link: { mobileWebUrl: pageUrl(), webUrl: pageUrl() } }] });
       return;
     }
     if (navigator.share) { try { await navigator.share({ title, text: desc, url: pageUrl() }); return; } catch (e) { if (e.name === 'AbortError') return; } }

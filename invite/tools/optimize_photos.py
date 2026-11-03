@@ -36,10 +36,10 @@ def main() -> None:
         web_version(orig, dst)
         print(f'{f.name} -> {dst.name} ({dst.stat().st_size // 1024}KB)')
 
-    # 카카오톡 미리보기용 og.jpg (1200x630) 를 커버 사진으로 만든다
+    # 카카오톡 미리보기용 og.jpg (1200x630): config 의 ogPhoto(없으면 cover)로 만든다
     cfg = (PHOTOS.parent / 'config.js').read_text(encoding='utf-8')
     import re
-    m = re.search(r"cover:\s*'([^']+)'", cfg)
+    m = re.search(r"ogPhoto:\s*'([^']+)'", cfg) or re.search(r"cover:\s*'([^']+)'", cfg)
     if m and (PHOTOS / m.group(1)).exists():
         im = Image.open(PHOTOS / m.group(1)).convert('RGB')
         im = ImageOps.fit(im, (1200, 630), Image.LANCZOS, centering=(0.5, 0.35))
