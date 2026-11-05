@@ -1,3 +1,7 @@
 .claude/
 invite/photos/_original/
 __pycache__/
+video/media/
+video/music/
+video/out/
+.vercel/

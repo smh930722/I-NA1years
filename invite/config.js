@@ -58,7 +58,7 @@ window.INVITE = {
 
   // 첫 화면 연출: 'vertical'(세로쓰기, 기본) / 'arch'(A안 아치 사진) / 'crayon'(B안 신짱아 크레용)
   introStyle: 'vertical',
-  showIntroPicker: true, // 꾸미기 패널에서 첫 화면을 바꿔 볼 수 있게 (정하면 false)
+  showIntroPicker: false, // 꾸미기 패널에서 첫 화면을 바꿔 볼 수 있게 (정하면 false)
   introPhoto: 'KakaoTalk_20261002_144355051_05.jpg', // A안 아치 사진에 쓸 사진
   crayonPhoto: 'KakaoTalk_20261002_080459172_04.jpg', // B안 크레용 액자에 쓸 사진
 
@@ -116,7 +116,7 @@ window.INVITE = {
 
   // 배경음악: invite/music/ 폴더의 파일 이름. 비우면 음악 버튼이 사라진다.
   music: 'happy-birthday-instrumental.mp3',
-  showMusicPicker: true, // 곡을 다 고르면 false로 바꿔 숨긴다
+  showMusicPicker: false, // 곡을 다 고르면 false로 바꿔 숨긴다
   // 후보 곡 (모두 Pixabay 무료 음원, 출처 표시 의무 없음)
   musicOptions: [
     { file: 'happy-birthday-instrumental.mp3', title: 'Happy Birthday Instrumental', by: 'kiravale' },
@@ -128,12 +128,12 @@ window.INVITE = {
 
   // 테마: lilac / peach / mint / sky / butter
   theme: 'lilac',
-  showThemePicker: true, // 색을 다 고르면 false로 바꿔 버튼을 숨긴다
+  showThemePicker: false, // 색을 다 고르면 false로 바꿔 버튼을 숨긴다
 
   // 방명록 저장용 Google Apps Script 웹앱 주소 (apps-script/README.md 참고)
   apiUrl: '',
 
   // 카카오 JavaScript 키 (있으면 카카오톡 공유 버튼이 카톡 공유창으로 열린다)
   kakaoJsKey: '',
-  siteUrl: 'https://smh930722.github.io/I-NA1years/invite/', // 배포 후 실제 주소 (예: https://smh930722.github.io/ina-dol/)
+  siteUrl: 'https://inadol.vercel.app/', // 배포 후 실제 주소 (예: https://smh930722.github.io/ina-dol/)
 };
